@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* ===== STEM Cave Design Tokens ===== */
+@theme {
+  --color-brand-light: #2563eb;
+  --color-brand-dark: #3b82f6;
+  --color-bg-light: #f8fafc;
+  --color-bg-dark: #121212;
+  --color-surface-light: #ffffff;
+  --color-surface-dark: #1e1e1e;
+  --color-border-light: #e2e8f0;
+  --color-border-dark: #2d2d2d;
+  --color-text-light: #0f172a;
+  --color-text-dark: #f1f5f9;
+}
+
+/* ===== Base Styles ===== */
+body {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Dark Mode Overrides ===== */
+.dark body,
+body.body--dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark);
+}
+
+.dark .bg-surface,
+body.body--dark .bg-surface {
+  background-color: var(--color-surface-dark);
+}
+
+.dark .border-default,
+body.body--dark .border-default {
+  border-color: var(--color-border-dark);
+}
+
+/* ===== Skeleton Screen ===== */
+.skeleton {
+  @apply animate-pulse rounded bg-gray-300;
+}
+.dark .skeleton {
+  @apply bg-gray-700;
+}
+
+/* ===== Touch-Target Optimizations ===== */
+.touch-target {
+  @apply min-h-[48px] min-w-[48px] flex items-center justify-center;
+}
+
+.btn-tap {
+  @apply transition-transform active:scale-95;
+}
+
+/* ===== Scrollbar Styling ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-gray-400;
+}
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-gray-600;
+}
